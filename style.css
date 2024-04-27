@@ -1,0 +1,86 @@
+
+/* ---------------------------- */
+body {
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    background-color: #ee9a9e;
+}
+header {
+    background-color: #796161;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+nav {
+    background-color: #4a4391;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+nav a:hover {
+    background-color: #666;
+}
+main {
+    padding: 20px;
+}
+.manga-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+.manga-item {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    display: block; /* Ensures it behaves like a block element */
+    margin-left: auto; /* Aligns it to the center horizontally */
+    margin-right: auto; /* Aligns it to the center horizontally */
+}
+.manga-item h3 {
+    margin-top: 0;
+}
+.manga-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.headerimg {
+    opacity: 40%;
+    height: 228px;
+    padding: 0%;
+    margin: -150px -200% 0%;
+    width: 200%; /* Allow the image to adjust its width while maintaining aspect ratio */
+    max-width: 135%; /* Limit the maximum width to prevent spreading */
+}
+
+.header-content{
+    font-size: 150%;
+    padding: 0%;
+    margin: 0%;
+    height: 150px;
+}
+
+.h1{
+    font-weight: bolder;
+    z-index: -auto;
+}
