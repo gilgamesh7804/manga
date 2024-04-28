@@ -1,26 +1,30 @@
-body {
-    font-family: "Merriweather", serif;
-    background-image: url('/static/bg2.jpg'); /* Replace 'path/to/your/background/image.jpg' with the actual path to your background image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-}
+/* welcome.css */
 
+
+
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto;
+    z-index: -1; /* Ensure it stays behind other content */
+}
 .welcome-container {
     text-align: center;
-    padding-top: 20%; /* Adjust the padding-top to vertically center the content */
+    padding-top: 20vh; /* Adjust the padding-top to vertically center the content */
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 110px; /* Increased font size */
     color: #6e3d9a;
     margin-bottom: 20px; /* Add some space below the heading */
 }
 
 p {
-    font-size: 18px;
+    font-size: 24px; /* Increased font size */
     color: #333;
     margin-bottom: 20px; /* Add some space below the paragraph */
 }
@@ -32,15 +36,23 @@ p {
 
 .btn {
     display: inline-block;
-    padding: 10px 20px;
-    margin: 0 10px;
+    padding: 30px 150px; /* Increased padding */
+    margin: 40px 30px 100px;
     background-color: #6e3d9a;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
+    font-size: 200%;
+    border-radius: 50px;
 }
 
 .btn:hover {
     background-color: #4a4391;
+}
+
+.animate__animated{
+    font-size: 130%;
+    font-weight: bolder;
+    color: #ffffff;
 }
