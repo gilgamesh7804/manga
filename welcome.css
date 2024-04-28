@@ -1,0 +1,46 @@
+body {
+    font-family: "Merriweather", serif;
+    background-image: url('/static/bg2.jpg'); /* Replace 'path/to/your/background/image.jpg' with the actual path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+.welcome-container {
+    text-align: center;
+    padding-top: 20%; /* Adjust the padding-top to vertically center the content */
+}
+
+h1 {
+    font-size: 36px;
+    color: #6e3d9a;
+    margin-bottom: 20px; /* Add some space below the heading */
+}
+
+p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px; /* Add some space below the paragraph */
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #6e3d9a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #4a4391;
+}
