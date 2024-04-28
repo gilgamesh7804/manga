@@ -4,16 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to MangaVerse</title>
-    <link rel="stylesheet" href="welcome.css"> <!-- Link to your CSS file for styling -->
+    <!-- Link to Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="welcome.css"> <!-- Link to your CSS file for additional styling -->
+    <style>
+        /* Define custom animation keyframes */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="welcome-container">
+    <video autoplay loop muted id="bg-video">
+        <source src="/static/video2.mp4" type="video/mp4">
+        <!-- Add additional source elements for other video formats -->
+    </video>
+    <div class="welcome-container animate__animated animate__fadeIn">
+        <!-- Adding animation to the container -->
         <h1>Welcome to MangaVerse</h1>
-        <p>Explore the world of manga!</p>
+        <p class="animate__animated animate__fadeInUp">Explore the world of manga!</p>
+        <!-- Adding animation to the text -->
         <div class="buttons-container">
-            <a href="manga.html" class="btn">Manga Section</a> <!-- Link to your manga section (index.html) -->
-            <a href="about.html" class="btn">About</a>
+            <a href="manga.html" class="btn" id="btnManga">Manga Section</a>
+            <!-- Adding animation to the button -->
+            <a href="about.html" class="btn" id="btnAbout">About</a>
+            <!-- Adding animation to the button -->
         </div>
     </div>
+
+    <script>
+        // Function to continuously apply animations in a loop
+        function animateInLoop() {
+            const btnManga = document.getElementById('btnManga');
+            const btnAbout = document.getElementById('btnAbout');
+
+            // Add animation class
+            btnManga.classList.add('animate__animated', 'animate__fadeInLeft');
+            btnAbout.classList.add('animate__animated', 'animate__fadeInRight');
+
+            // Remove animation class after animation completes
+            btnManga.addEventListener('animationend', () => {
+                btnManga.classList.remove('animate__animated', 'animate__fadeInLeft');
+            });
+
+            btnAbout.addEventListener('animationend', () => {
+                btnAbout.classList.remove('animate__animated', 'animate__fadeInRight');
+            });
+        }
+
+        // Call the animateInLoop function initially
+        animateInLoop();
+
+        // Call the animateInLoop function repeatedly in a loop
+        setInterval(animateInLoop, 5000); // Adjust the interval time as needed (in milliseconds)
+    </script>
 </body>
 </html>
