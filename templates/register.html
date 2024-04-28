@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | MangaVerse</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}"> <!-- Link to your CSS file for styling -->
+</head>
+<body>
+    <div class="heading-container">
+        <!-- <h1>Register</h1> -->
+    </div>
+    <!-- Alert message -->
+    <div id="alert" class="alert" style="display: none;"></div>
+    
+    <form id="registerForm">
+        <input type="text" placeholder="Username" id="username">
+        <input type="email" placeholder="Email" id="email">
+        <input type="password" placeholder="Password" id="password">
+        <button type="submit">Register</button>
+    </form>
+    
+    <script>
+        const registerForm = document.getElementById('registerForm');
+        const alertMessage = document.getElementById('alert');
+
+        registerForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            
+            // Get the values from the form fields
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Perform any necessary validation here
+            
+            // Display alert message
+            alertMessage.textContent = 'You have successfully registered!';
+            alertMessage.style.display = 'block';
+
+            // Optionally, send the data to the server or perform any other actions
+            console.log('Username:', username);
+            console.log('Email:', email);
+            console.log('Password:', password);
+
+            // Optionally, redirect the user after successful registration
+            // window.location.href = 'success.html';
+        });
+    </script>
+</body>
+</html>

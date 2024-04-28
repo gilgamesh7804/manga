@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='manga.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        section {
+            scroll-margin-top: 100px; /* Adjust as needed to offset fixed header */
+        }
+    </style>
+</head>
+<body>
+    <video id="bg-video" autoplay loop muted>
+        <source src="/static/video1.mp4" type="video/mp4">
+    </video>
+    <header>
+        <div class="header-content">
+            <h1>...MangaVerse...</h1>
+            <img class="headerimg" src="/static/allimg.jpg" alt="">
+        </div>
+    </header>
+    <nav>
+        <a href="#latest-releases">Latest Releases</a>
+        <a href="#popular-manga">Popular Manga</a>
+        <a href="#genres">Genres</a>
+    </nav>
+    <main>
+        <section id="latest-releases" class="section">
+            <h2>Latest Releases</h2>
+            <div class="manga-list latest-manga-list">
+                <!-- Latest releases content -->
+                <div class="manga-item">
+                    <h3>Latest Manga 1</h3>
+                    <img src="/static/lbg1.jpg" alt="Latest Manga 1">
+                    <p>Description of Latest Manga 1</p>
+                </div>
+                <div class="manga-item">
+                    <h3>Latest Manga 2</h3>
+                    <img src="/static/lbg2.jpg" alt="Latest Manga 2">
+                    <p>Description of Latest Manga 2</p>
+                </div>
+                <div class="manga-item">
+                    <h3>Latest Manga 3</h3>
+                    <img src="/static/lbg3.jpg" alt="Latest Manga 3">
+                    <p>Description of Latest Manga 3</p>
+                </div>
+                <div class="manga-item">
+                    <h3>Latest Manga 3</h3>
+                    <img src="/static/lbg4.jpg" alt="Latest Manga 3">
+                    <p>Description of Latest Manga 3</p>
+                </div>
+                <div class="manga-item">
+                    <h3>Latest Manga 3</h3>
+                    <img src="/static/lbg5.jpg" alt="Latest Manga 3">
+                    <p>Description of Latest Manga 3</p>
+                </div>
+                <div class="manga-item">
+                    <h3>Latest Manga 3</h3>
+                    <img src="/static/lbg6.jpg" alt="Latest Manga 3">
+                    <p>Description of Latest Manga 3</p>
+                </div>
+                <div class="manga-item">
+                    <h3>Latest Manga 3</h3>
+                    <img src="/static/lbg7.jpg" alt="Latest Manga 3">
+                    <p>Description of Latest Manga 3</p>
+                </div>
+            </div>
+        </section>
+        <section id="popular-manga" class="section">
+            <h2>Popular Manga</h2>
+            <div class="manga-list popular-manga-list">
+                <!-- Popular manga content -->
+                <div class="manga-item">
+                    <h3>Popular Manga 1</h3>
+                    <img src="/static/bg1.jpeg" alt="Popular Manga 1">
+                    <p>Description of Popular Manga 1</p>
+                </div>
+                <div class="manga-item">
+                    <h3>Popular Manga 2</h3>
+                    <img src="/static/bg5.webp" alt="Popular Manga 2">
+                    <p>Description of Popular Manga 2</p>
+                </div>
+                <div class="manga-item">
+                    <h3>Popular Manga 3</h3>
+                    <img src="/static/bg4.jpg" alt="Popular Manga 3">
+                    <p>Description of Popular Manga 3</p>
+                </div>
+                <div class="manga-item">
+                    <h3>Popular Manga 3</h3>
+                    <img src="/static/bg11.jpg" alt="Popular Manga 3">
+                    <p>Description of Popular Manga 3</p>
+                </div>
+                <div class="manga-item">
+                    <h3>Popular Manga 3</h3>
+                    <img src="/static/bg12.jpg" alt="Popular Manga 3">
+                    <p>Description of Popular Manga 3</p>
+                </div>
+                <div class="manga-item">
+                    <h3>Popular Manga 3</h3>
+                    <img src="/static/bg13.jpg" alt="Popular Manga 3">
+                    <p>Description of Popular Manga 3</p>
+                </div>
+                <div class="manga-item">
+                    <h3>Popular Manga 3</h3>
+                    <img src="/static/bg14.jpg" alt="Popular Manga 3">
+                    <p>Description of Popular Manga 3</p>
+                </div>
+            </div>
+        </section>
+        <section id="genres" class="section">
+            <h2>Genres</h2>
+            <div class="genres-list">
+                <!-- Genres content -->
+                <ul>
+                    <li>Action</li>
+                    <li>Adventure</li>
+                    <li>Comedy</li>
+                    <li>Drama</li>
+                    <li>Fantasy</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script>
+        window.addEventListener('wheel', function(e) {
+            if (e.deltaY > 0) {
+                window.scrollBy(0, window.innerHeight);
+            } else {
+                window.scrollBy(0, -window.innerHeight);
+            }
+        });
+    </script>
+</body>
+</html>

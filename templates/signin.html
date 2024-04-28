@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | MangaVerse</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='signin.css') }}"> <!-- Link to your CSS file for styling -->
+</head>
+<body>
+    <!-- <h1>Sign In</h1> -->
+    <form>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button type="submit">Sign In</button>
+    </form>
+    <script>
+        const signInForm = document.getElementById('signInForm');
+
+        signInForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            
+            // Get the values from the form fields
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Perform any necessary validation here
+            
+            // Send the data to the server or perform any other actions
+            console.log('Email:', email);
+            console.log('Password:', password);
+
+            // Optionally, redirect the user after successful sign in
+            // window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>
