@@ -1,0 +1,208 @@
+:root {
+	--foreground: #caccf6;
+	--background: #0a1207;
+	--title: #F99904;
+	--high_foreground: #8d8eac;
+	--high-background: #20202c;
+	--selected-foreground: #ffffff;
+
+	--footer-left: #caccf6;
+	--footer-right: #23B8E7;
+}
+/* Basic */
+html {
+	scroll-behavior: smooth;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+body {
+	color: var(--background);
+	margin: 0;
+	padding: 0;
+	perspective: 1px;
+	transform-style: preserve-3d;
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	font-size: 120%;
+	font-family: Helvetica,Arial,sans-serif;
+	scroll-behavior: smooth;
+
+	/* Experimental */
+	scroll-timeline: body-progress vertical;
+}
+
+p,code { color: var(--foreground); }
+p.text-body { text-align: left; width: clamp(0px, 80%, 900px); }
+a { text-decoration: none; }
+h1,h2,h3,h4,h5,h6 { color: var(--title); }
+
+div.parallax-pane {
+	box-sizing: border-box;
+	min-height: 100vh;
+	position: relative;
+	transform-style: inherit;
+	width: 100vw;
+	text-align: center;
+	overflow: hidden;
+
+}
+.title-pane::before {
+	content: "";
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	display: block;
+	background: url("./resources/source_code.jpg");
+	background-size: cover;
+	transform-origin: center center 0;
+	transform: translateZ(-14px) scale(15);
+	z-index: -1;
+	min-height: 100vh;
+}
+.title-pane h1, .title-pane h2 {
+	text-transform: uppercase;
+	text-shadow: 6px 6px 3px var(--background);
+	color: var(--title);
+}
+.title-pane h1{
+	position: absolute;
+	top: 50%;
+	left: 5%;
+	transform: translate(0%, -50%);
+	font-size: 220%;
+}
+.title-pane h2 {
+	position: absolute;
+	top: 56%;
+	left: 5%;
+	transform: translate(0%, -50%); 
+	font-size: 120%;
+	opacity: 0.6;
+}
+.title-pane img {
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	transform: translate(-50%, 0%); 
+	width: 35px;
+
+	animation: opacity_pulse 1s ease-in-out infinite alternate;
+}
+
+div.content {
+	z-index: 2;
+	position: absolute;
+	top: 100vh;
+	background: var(--background);
+	line-height: 140%;
+	color: grey;
+
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	width: 100vw;
+}
+.content p { width: clamp(0px, 80vw, 800px); }
+
+div.full-pane {
+	display: flex;
+	flex-flow: column;
+	height: 100vh;
+	width: 100vw;
+	margin-top: 3%;
+}
+.pane-item h2 {
+	position: absolute;
+	left: 5%;
+}
+.pane-item p {
+	transform: translate(90%, 0%);
+	margin-bottom: 5%;
+}
+.down-arrow img {
+	position: absolute;
+	right: 5%;
+	transform: translate(-50%, 0%); 
+	width: 30px;
+
+	animation: opacity_pulse 3s ease-in-out infinite alternate;
+}
+
+div.example {
+	padding: 5px;
+	background: var(--high-background);
+	border-radius: 10px;
+	margin-bottom: 100px;
+}
+.example { color: var(--high_foreground); }
+.selected {
+	color: var(--selected-foreground);
+	text-shadow: 5px 5px 2px var(--background);
+}
+
+
+div.closing-thoughts {
+	margin-bottom: 6%;
+}
+
+a.footer {
+	color: var(--background);
+	padding: 5px;
+	border-radius: 5px;
+	background: var(--footer-left);
+	opacity: 0.6;
+	transition: 100ms ease-in-out;
+	animation: light-flicker 1s linear infinite alternate;
+}
+a.footer:hover {
+	background: linear-gradient(
+		45deg,
+		var(--footer-left) 0 30%,
+		var(--footer-right) 30% 80%
+	);
+	opacity: 1;
+	box-shadow: 0 0 50px var(--footer-right);
+	animation: pause;
+}
+
+/* Custom scroll bar */
+/*  Chrome */
+::-webkit-scrollbar { width: 1em; }
+::-webkit-scrollbar-track { background: var(--high-background); }
+::-webkit-scrollbar-thumb { background: var(--footer-right); }
+/*  Firefox */
+* { scrollbar-color: var(--footer-right) var(--high-background); }
+
+/* Experimental scroll-timeline */
+.scroll-progress-bar {
+	height: 5px;
+	background: var(--footer-right);
+	position: sticky;
+	top: 0;
+	z-index: 3;
+	transform: translateX(-100%);
+
+	box-shadow: 0 0 5px var(--background);
+
+	animation: scroll-progress 1s linear both;
+	animation-timeline: body-progress;
+}
+@keyframes scroll-progress { to { transform: translateX(0%); } }
+
+/* Animations */
+@keyframes opacity_pulse {
+	from { opacity: 0.4; }
+	to { opacity: 0.9; }
+}
+@keyframes light-flicker {
+	from { box-shadow: 0 0 2px var(--footer-right); }
+	to { box-shadow: 0 0 20px var(--footer-right); }
+}
